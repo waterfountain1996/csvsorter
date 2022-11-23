@@ -135,7 +135,7 @@ func main() {
 
 	var ifname, ofname, dirname string	// input file, output file, input directory
 	var index uint						// csv record index to sort by
-	var reverse, skipHeader bool		// reverse output, omit header sorting
+	var reverse bool					// reverse output
 
 	var wg sync.WaitGroup				// concurrent reader synchronization
 	var fileStream chan string			// csv file stream
@@ -147,7 +147,6 @@ func main() {
 	flag.StringVar(&dirname, "d", "", "Input directory")
 	flag.UintVar(&index, "f", 1, "Sort records by Nth field")
 	flag.BoolVar(&reverse, "r", false, "Sort records in reverse order")
-	flag.BoolVar(&skipHeader, "h", false, "Ignore header when sorting")
 
 	flag.Parse()
 	
